@@ -12,10 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainNavigationComponent } from './main-navigation/main-navigation.component';
-import { SeparatorPipe } from './separator.pipe';
 
 @NgModule({
-  declarations: [AppComponent, MainNavigationComponent, SeparatorPipe],
+  declarations: [AppComponent, MainNavigationComponent],
   imports: [
     BrowserModule,
     FormsModule,

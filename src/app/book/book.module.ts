@@ -16,6 +16,7 @@ import { BookRoutingModule } from './book-routing.module';
 import { BookComponent } from './book.component';
 import { BookDataService } from './shared/book-data.service';
 import { OrderBtnDirective } from './shared/order-btn.directive';
+import { SeparatorPipe } from './separator.pipe';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { OrderBtnDirective } from './shared/order-btn.directive';
     BookDetailComponent,
     BookEditComponent,
     BookNewComponent,
-    OrderBtnDirective
+    OrderBtnDirective,
+    SeparatorPipe
   ],
   providers: [BookDataService]
 })
