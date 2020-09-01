@@ -4,9 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'separator'
 })
 export class SeparatorPipe implements PipeTransform {
-
-  transform(isbn: string, length: number): string {
-    return separate(isbn, length);
+  transform(value: string, length: number): string {
+    return (value) ? separate(value, length) : value;
   }
 }
 
@@ -14,7 +13,7 @@ function separate(charSet: string, groupLength: number, separator = ' ') {
   charSet = purgeIsbn(charSet);
   let separatedCharSet = '';
   for (let i=0; i < charSet.length; i++) {
-    if (isNotTheEnd(i, groupLength)) {
+    if (isStartOfNewGroup(i, groupLength)) {
       separatedCharSet += `${separator}${charSet[i]}`
     } else {
       separatedCharSet += charSet[i]
@@ -23,7 +22,7 @@ function separate(charSet: string, groupLength: number, separator = ' ') {
   return separatedCharSet;
 }
 
-function isNotTheEnd(i: number, groupLength: number) {
+function isStartOfNewGroup(i: number, groupLength: number) {
   return i > 0 && i % groupLength === 0;
 }
 
