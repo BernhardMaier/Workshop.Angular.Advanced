@@ -1,6 +1,7 @@
 <mat-list>
   <h3 mat-subheader data-testid='book-list_heading'>Books</h3>
   <mat-list-item
+    data-testid='book-list__book'
     [routerLink]="[book.isbn]"
     *ngFor="let book of books$ | async"
     class="book-single"
